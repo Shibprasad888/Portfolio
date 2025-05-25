@@ -1,0 +1,408 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced Contextual Background Images for Sections with improved gradients */
+.hero-bg {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.75), rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.1)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(6,182,212,0.12)" stroke-width="1.5"/><circle cx="30" cy="30" r="2" fill="rgba(6,182,212,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  background-size: cover, 60px 60px;
+  background-position: center, center;
+  background-attachment: fixed;
+}
+
+.about-bg {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.08)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="education" width="120" height="120" patternUnits="userSpaceOnUse"><rect width="25" height="70" x="15" y="25" fill="rgba(6,182,212,0.06)" rx="3"/><rect width="25" height="70" x="45" y="25" fill="rgba(59,130,246,0.06)" rx="3"/><rect width="25" height="70" x="75" y="25" fill="rgba(139,92,246,0.06)" rx="3"/><circle cx="60" cy="10" r="4" fill="rgba(6,182,212,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23education)"/></svg>');
+  background-size: cover, 120px 120px;
+  background-position: center, center;
+  background-attachment: fixed;
+}
+
+.skills-bg {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.82), rgba(139, 92, 246, 0.12), rgba(16, 185, 129, 0.08)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="code" width="100" height="100" patternUnits="userSpaceOnUse"><text x="15" y="25" font-family="monospace" font-size="14" fill="rgba(6,182,212,0.1)">&lt;/&gt;</text><text x="50" y="50" font-family="monospace" font-size="12" fill="rgba(59,130,246,0.08)">{ }</text><text x="25" y="75" font-family="monospace" font-size="10" fill="rgba(139,92,246,0.06)">func()</text><circle cx="80" cy="20" r="3" fill="rgba(6,182,212,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23code)"/></svg>');
+  background-size: cover, 100px 100px;
+  background-position: center, center;
+  background-attachment: fixed;
+}
+
+.projects-bg {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(16, 185, 129, 0.12), rgba(6, 182, 212, 0.08)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="circuit" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="3" fill="rgba(6,182,212,0.12)"/><circle cx="65" cy="15" r="3" fill="rgba(6,182,212,0.12)"/><circle cx="40" cy="65" r="3" fill="rgba(6,182,212,0.12)"/><line x1="15" y1="15" x2="65" y2="15" stroke="rgba(6,182,212,0.08)" stroke-width="1.5"/><line x1="40" y1="15" x2="40" y2="65" stroke="rgba(6,182,212,0.08)" stroke-width="1.5"/><rect width="8" height="8" x="36" y="36" fill="rgba(16,185,129,0.06)" rx="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23circuit)"/></svg>');
+  background-size: cover, 80px 80px;
+  background-position: center, center;
+  background-attachment: fixed;
+}
+
+.contact-bg {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(236, 72, 153, 0.12), rgba(6, 182, 212, 0.08)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="network" width="120" height="120" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="4" fill="rgba(6,182,212,0.1)"/><circle cx="95" cy="25" r="4" fill="rgba(6,182,212,0.1)"/><circle cx="60" cy="95" r="4" fill="rgba(6,182,212,0.1)"/><line x1="25" y1="25" x2="95" y2="25" stroke="rgba(6,182,212,0.06)" stroke-width="1.5"/><line x1="25" y1="25" x2="60" y2="95" stroke="rgba(6,182,212,0.06)" stroke-width="1.5"/><line x1="95" y1="25" x2="60" y2="95" stroke="rgba(6,182,212,0.06)" stroke-width="1.5"/><circle cx="60" cy="50" r="2" fill="rgba(236,72,153,0.08)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23network)"/></svg>');
+  background-size: cover, 120px 120px;
+  background-position: center, center;
+  background-attachment: fixed;
+}
+
+/* Enhanced Fixed Navigation with improved backdrop and positioning */
+.fixed-nav {
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background: rgba(0, 0, 0, 0.88);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(6, 182, 212, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimized Social Media Animations with GPU acceleration */
+.social-icon-optimized {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.social-icon-optimized:hover {
+  transform: translateY(-6px) scale(1.06) rotateZ(2deg) translateZ(15px);
+  filter: drop-shadow(0 8px 16px rgba(6, 182, 212, 0.25));
+}
+
+/* Enhanced 3D perspective with better performance */
+html {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with enhanced 3D effect - V2 Style */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+  border-radius: 6px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6);
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.5), inset 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #0891b2, #2563eb, #7c3aed);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.7), inset 0 0 6px rgba(255, 255, 255, 0.15);
+}
+
+/* Optimized smooth animations with reduced motion support */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s
+    ease, opacity 0.3s ease;
+}
+
+/* Enhanced glow effects with better performance */
+.glow {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.35), 0 8px 16px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Optimized gradient text animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 6s ease infinite;
+  will-change: background-position;
+}
+
+/* Enhanced 3D card hover effects with optimized performance */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.card-3d:hover {
+  transform: rotateY(8deg) rotateX(4deg) translateZ(15px);
+  box-shadow: 0 15px 35px rgba(6, 182, 212, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced 3D button effects with better performance */
+.btn-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.btn-3d:hover {
+  transform: translateY(-4px) rotateX(8deg) translateZ(8px);
+  box-shadow: 0 15px 30px rgba(6, 182, 212, 0.25), 0 8px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0
+    rgba(255, 255, 255, 0.15);
+}
+
+/* Optimized floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+.floating-particle {
+  animation: float 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Enhanced ripple effect - V2 Style */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  animation: ripple 0.6s linear;
+}
+
+/* 3D text depth effect - V2 Style */
+.text-3d {
+  text-shadow:
+    0 1px 0 rgba(6, 182, 212, 0.8),
+    0 2px 0 rgba(6, 182, 212, 0.7),
+    0 3px 0 rgba(6, 182, 212, 0.6),
+    0 4px 0 rgba(6, 182, 212, 0.5),
+    0 5px 0 rgba(6, 182, 212, 0.4),
+    0 6px 1px rgba(0, 0, 0, 0.1),
+    0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced interactive elements with better performance */
+.interactive-element {
+  transform-style: preserve-3d;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.interactive-element:hover {
+  transform: translateZ(8px) scale(1.03);
+  filter: drop-shadow(0 8px 16px rgba(6, 182, 212, 0.25));
+}
+
+/* Smooth focus states with 3D effect - V2 Style */
+input:focus,
+textarea:focus {
+  transform: translateZ(5px);
+  box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.5), 0 10px 20px rgba(6, 182, 212, 0.2);
+}
+
+/* Enhanced selection styling */
+::selection {
+  background: rgba(6, 182, 212, 0.25);
+  color: white;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+}
+
+::-moz-selection {
+  background: rgba(6, 182, 212, 0.25);
+  color: white;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+}
+
+/* V2 Specific Animations */
+@keyframes thunder {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.thunder-effect {
+  animation: thunder 0.8s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Performance optimizations for mobile and reduced motion */
+@media (max-width: 768px) {
+  .hero-bg,
+  .about-bg,
+  .skills-bg,
+  .projects-bg,
+  .contact-bg {
+    background-attachment: scroll;
+  }
+
+  .social-icon-optimized:hover {
+    transform: translateY(-3px) scale(1.03) translateZ(8px);
+  }
+
+  .card-3d:hover {
+    transform: rotateY(4deg) rotateX(2deg) translateZ(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-bg,
+  .about-bg,
+  .skills-bg,
+  .projects-bg,
+  .contact-bg {
+    background-attachment: scroll;
+  }
+
+  .social-icon-optimized:hover {
+    transform: scale(1.02);
+  }
+}
